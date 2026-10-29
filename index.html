@@ -220,26 +220,109 @@
     </section>
 
     <!-- ==============================================================================
-         3. Video Band Section
+         3. Vertical Reels Carousel (7-Video Loop)
          ============================================================================== -->
-    <section class="video-section" id="video-band" aria-label="Club Cinematic Video">
-      <div class="container">
-        <div class="video-wrapper" id="video-wrapper">
-          <video 
-            id="gym-video" 
-            class="gym-video"
-            playsinline 
-            muted 
-            loop 
-            preload="none" 
-            poster="assets/images/video-poster.jpg"
-            aria-label="Athletes training at Ironwood Athletic Club"
-          >
-            <source src="assets/video/gym-reel.mp4" type="video/mp4">
-          </video>
-          <div class="video-overlay">
-            <h2 class="video-overlay-line" id="video-overlay-line">Where effort becomes routine.</h2>
+    <section class="video-section" id="video-band" aria-label="Club Live Training Reels">
+      <div class="container reels-header-container">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <div class="eyebrow" style="justify-content: center;">Discipline In Motion</div>
+          <h2 class="section-heading" id="video-overlay-line" style="margin: 0 auto;">Where Effort Becomes Routine</h2>
+          <p style="max-width: 48ch; margin: 0.75rem auto 0; font-size: 1.05rem; color: var(--text-muted);">
+            Captured live on the Ironwood training floor. Continuous athletic progression across strength, conditioning, and recovery.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3D Circular Reels Stage -->
+      <div class="reels-stage-wrapper" id="reels-stage-wrapper">
+        <div class="reels-stage" id="reels-stage" role="region" aria-label="Vertical video loop showcase">
+          <div class="reel-card active" data-index="0" id="reel-0">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/video-poster.jpg">
+              <source src="assets/video/gym-reel.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Conditioning</span>
+              <h3 class="reel-title">Athletic Conditioning</h3>
+            </div>
           </div>
+          <div class="reel-card" data-index="1" id="reel-1">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/facility-cardio.jpg">
+              <source src="assets/video/man-running.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Cardio</span>
+              <h3 class="reel-title">Endurance & Speed Track</h3>
+            </div>
+          </div>
+          <div class="reel-card" data-index="2" id="reel-2">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/intro-floor.jpg">
+              <source src="assets/video/girl-chest-exercise.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Hypertrophy</span>
+              <h3 class="reel-title">Dumbbell Press Mechanics</h3>
+            </div>
+          </div>
+          <div class="reel-card" data-index="3" id="reel-3">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/facility-weights.jpg">
+              <source src="assets/video/man-chest-exercise.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Strength</span>
+              <h3 class="reel-title">Heavy Barbell Incline</h3>
+            </div>
+          </div>
+          <div class="reel-card" data-index="4" id="reel-4">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/program-classes.jpg">
+              <source src="assets/video/girl-leg-exercise.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Lower Body</span>
+              <h3 class="reel-title">Squat Depth & Tension</h3>
+            </div>
+          </div>
+          <div class="reel-card" data-index="5" id="reel-5">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/hero-1-strength.jpg">
+              <source src="assets/video/man-hand-exercise.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Arms</span>
+              <h3 class="reel-title">Arm Hypertrophy & Curls</h3>
+            </div>
+          </div>
+          <div class="reel-card" data-index="6" id="reel-6">
+            <video class="reel-video" playsinline muted loop preload="auto" poster="assets/images/program-personal.jpg">
+              <source src="assets/video/man-hand-exercise-2.mp4" type="video/mp4">
+            </video>
+            <div class="reel-overlay">
+              <span class="chip reel-chip">Precision</span>
+              <h3 class="reel-title">Cable Biceps Isolation</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls: Prev / Next buttons + Indicators -->
+        <div class="reels-controls">
+          <button class="test-btn reels-nav-btn" id="reels-prev" aria-label="Previous Video Reel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="reels-info">
+            <span class="reels-counter" id="reels-counter">01 / 07</span>
+            <div class="reels-dots" id="reels-dots" role="tablist" aria-label="Reel selector">
+              <button class="hero-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Reel 1"></button>
+              <button class="hero-dot" data-index="1" role="tab" aria-selected="false" aria-label="Reel 2"></button>
+              <button class="hero-dot" data-index="2" role="tab" aria-selected="false" aria-label="Reel 3"></button>
+              <button class="hero-dot" data-index="3" role="tab" aria-selected="false" aria-label="Reel 4"></button>
+              <button class="hero-dot" data-index="4" role="tab" aria-selected="false" aria-label="Reel 5"></button>
+              <button class="hero-dot" data-index="5" role="tab" aria-selected="false" aria-label="Reel 6"></button>
+              <button class="hero-dot" data-index="6" role="tab" aria-selected="false" aria-label="Reel 7"></button>
+            </div>
+          </div>
+
+          <button class="test-btn reels-nav-btn" id="reels-next" aria-label="Next Video Reel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
       </div>
     </section>

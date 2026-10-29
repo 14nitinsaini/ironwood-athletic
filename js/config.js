@@ -99,12 +99,61 @@ window.SITE_CONFIG = {
   },
 
   // ----------------------------------------------------------------------------
-  // Video Band
+  // Vertical Video Reels Carousel (7 Videos Loop)
   // ----------------------------------------------------------------------------
   video: {
-    file: "assets/video/gym-reel.mp4",
-    poster: "assets/images/video-poster.jpg",
-    overlayLine: "Where effort becomes routine."
+    overlayLine: "Where effort becomes routine.",
+    reels: [
+      {
+        id: "gym-reel",
+        file: "assets/video/gym-reel.mp4",
+        poster: "assets/images/video-poster.jpg",
+        title: "Athletic Conditioning",
+        tag: "Conditioning"
+      },
+      {
+        id: "man-running",
+        file: "assets/video/man-running.mp4",
+        poster: "assets/images/facility-cardio.jpg",
+        title: "Endurance & Speed Track",
+        tag: "Cardio"
+      },
+      {
+        id: "girl-chest",
+        file: "assets/video/girl-chest-exercise.mp4",
+        poster: "assets/images/intro-floor.jpg",
+        title: "Dumbbell Press Mechanics",
+        tag: "Hypertrophy"
+      },
+      {
+        id: "man-chest",
+        file: "assets/video/man-chest-exercise.mp4",
+        poster: "assets/images/facility-weights.jpg",
+        title: "Heavy Barbell Incline",
+        tag: "Strength"
+      },
+      {
+        id: "girl-leg",
+        file: "assets/video/girl-leg-exercise.mp4",
+        poster: "assets/images/program-classes.jpg",
+        title: "Squat Depth & Tension",
+        tag: "Lower Body"
+      },
+      {
+        id: "man-arms",
+        file: "assets/video/man-hand-exercise.mp4",
+        poster: "assets/images/hero-1-strength.jpg",
+        title: "Arm Hypertrophy & Curls",
+        tag: "Arms"
+      },
+      {
+        id: "man-arms-2",
+        file: "assets/video/man-hand-exercise-2.mp4",
+        poster: "assets/images/program-personal.jpg",
+        title: "Cable Biceps Isolation",
+        tag: "Precision"
+      }
+    ]
   },
 
   // ----------------------------------------------------------------------------

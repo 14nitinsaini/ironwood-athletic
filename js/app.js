@@ -1151,6 +1151,216 @@
   }
 
   // ----------------------------------------------------------------------------
+  // Vertical Video Reels Carousel (7-Video Loop)
+  // ----------------------------------------------------------------------------
+  let activeReelIndex = 0;
+  let reelTimer = null;
+  const REEL_CYCLE_MS = 3500; // auto-advances every 3.5s
+
+  function initReelsCarousel() {
+    const stage = document.getElementById("reels-stage");
+    const cards = document.querySelectorAll(".reel-card");
+    const prevBtn = document.getElementById("reels-prev");
+    const nextBtn = document.getElementById("reels-next");
+    const counter = document.getElementById("reels-counter");
+    const dotsContainer = document.getElementById("reels-dots");
+    const section = document.getElementById("video-band");
+
+    if (!stage || cards.length === 0) return;
+    const totalReels = cards.length;
+
+    // Render dot indicators
+    if (dotsContainer) {
+      dotsContainer.innerHTML = "";
+      for (let i = 0; i < totalReels; i++) {
+        const dot = document.createElement("button");
+        dot.className = `hero-dot ${i === 0 ? "active" : ""}`;
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+        dot.setAttribute("aria-label", `Reel ${i + 1}`);
+        dot.addEventListener("click", () => {
+          goToReel(i);
+          startReelTimer();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateReelPositions() {
+      const dots = dotsContainer ? dotsContainer.querySelectorAll(".hero-dot") : [];
+      
+      cards.forEach((card, i) => {
+        let offset = (i - activeReelIndex) % totalReels;
+        if (offset > 3) offset -= totalReels;
+        if (offset < -3) offset += totalReels;
+
+        // Reset classes
+        card.className = "reel-card";
+
+        if (offset === 0) {
+          // Center Active
+          card.classList.add("active");
+          card.style.transform = "translateX(0%) translateZ(80px) scale(1.15)";
+          card.style.opacity = "1";
+          card.style.zIndex = "10";
+          card.style.pointerEvents = "auto";
+          card.setAttribute("aria-hidden", "false");
+        } else if (offset === 1) {
+          // Immediate Right
+          card.classList.add("slot-right-1");
+          card.style.transform = "translateX(115%) translateZ(-40px) scale(0.88) rotateY(-14deg)";
+          card.style.opacity = "0.65";
+          card.style.zIndex = "6";
+          card.style.pointerEvents = "auto";
+          card.setAttribute("aria-hidden", "false");
+        } else if (offset === -1) {
+          // Immediate Left
+          card.classList.add("slot-left-1");
+          card.style.transform = "translateX(-115%) translateZ(-40px) scale(0.88) rotateY(14deg)";
+          card.style.opacity = "0.65";
+          card.style.zIndex = "6";
+          card.style.pointerEvents = "auto";
+          card.setAttribute("aria-hidden", "false");
+        } else if (offset === 2) {
+          // Far Right
+          card.classList.add("slot-right-2");
+          card.style.transform = "translateX(210%) translateZ(-100px) scale(0.74) rotateY(-22deg)";
+          card.style.opacity = "0.28";
+          card.style.zIndex = "3";
+          card.style.pointerEvents = "auto";
+          card.setAttribute("aria-hidden", "false");
+        } else if (offset === -2) {
+          // Far Left
+          card.classList.add("slot-left-2");
+          card.style.transform = "translateX(-210%) translateZ(-100px) scale(0.74) rotateY(22deg)";
+          card.style.opacity = "0.28";
+          card.style.zIndex = "3";
+          card.style.pointerEvents = "auto";
+          card.setAttribute("aria-hidden", "false");
+        } else {
+          // Hidden Behind
+          card.classList.add("slot-hidden");
+          card.style.transform = offset > 0 ? "translateX(280%) scale(0.6)" : "translateX(-280%) scale(0.6)";
+          card.style.opacity = "0";
+          card.style.zIndex = "0";
+          card.style.pointerEvents = "none";
+          card.setAttribute("aria-hidden", "true");
+        }
+      });
+
+      if (counter) counter.textContent = `0${activeReelIndex + 1} / 0${totalReels}`;
+
+      dots.forEach((dot, idx) => {
+        const isActive = idx === activeReelIndex;
+        dot.classList.toggle("active", isActive);
+        dot.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+    }
+
+    function goToReel(targetIdx) {
+      activeReelIndex = (targetIdx + totalReels) % totalReels;
+      updateReelPositions();
+    }
+
+    function nextReel() {
+      goToReel(activeReelIndex + 1);
+    }
+
+    function prevReel() {
+      goToReel(activeReelIndex - 1);
+    }
+
+    function startReelTimer() {
+      stopReelTimer();
+      reelTimer = setInterval(nextReel, REEL_CYCLE_MS);
+    }
+
+    function stopReelTimer() {
+      if (reelTimer) {
+        clearInterval(reelTimer);
+        reelTimer = null;
+      }
+    }
+
+    // Attach card click handlers: clicking any side card rotates it to center
+    cards.forEach((card, idx) => {
+      card.addEventListener("click", () => {
+        if (idx !== activeReelIndex) {
+          goToReel(idx);
+          startReelTimer();
+        }
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        prevReel();
+        startReelTimer();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        nextReel();
+        startReelTimer();
+      });
+    }
+
+    // Hover & touch pauses
+    const wrapper = document.getElementById("reels-stage-wrapper");
+    if (wrapper) {
+      wrapper.addEventListener("mouseenter", stopReelTimer);
+      wrapper.addEventListener("mouseleave", startReelTimer);
+      wrapper.addEventListener("touchstart", stopReelTimer, { passive: true });
+      wrapper.addEventListener("touchend", startReelTimer, { passive: true });
+
+      // Touch swipe gestures
+      let touchStartX = 0;
+      let touchEndX = 0;
+      wrapper.addEventListener("touchstart", e => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      wrapper.addEventListener("touchend", e => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) prevReel();
+          else nextReel();
+          startReelTimer();
+        }
+      }, { passive: true });
+    }
+
+    // Pause on hidden tab
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopReelTimer();
+      else startReelTimer();
+    });
+
+    // IntersectionObserver: play all videos while section is visible on screen
+    if (section) {
+      const allVideos = stage.querySelectorAll("video");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            allVideos.forEach(v => v.play().catch(() => {}));
+            startReelTimer();
+          } else {
+            allVideos.forEach(v => v.pause());
+            stopReelTimer();
+          }
+        });
+      }, { threshold: 0.15 });
+
+      observer.observe(section);
+    }
+
+    updateReelPositions();
+    startReelTimer();
+  }
+
+  // ----------------------------------------------------------------------------
   // 15. Missing Image Fallback Gradients
   // ----------------------------------------------------------------------------
   function initImageFallbacks() {
@@ -1169,6 +1379,7 @@
     applyTheme();
     applyFeatures();
     populateBrand();
+    initReelsCarousel();
     renderPrograms();
     renderFacilities();
     renderTrainers();
@@ -1189,3 +1400,4 @@
     init();
   }
 })();
+

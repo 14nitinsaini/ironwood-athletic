@@ -279,90 +279,29 @@
   }
 
   // ----------------------------------------------------------------------------
-  // 4. Video Band Expansion (Scrubbed ScrollTrigger)
+  // 4. Vertical Reels Stage Reveal
   // ----------------------------------------------------------------------------
   function initVideoBand() {
     const videoSection = document.getElementById("video-band");
-    const videoWrapper = document.getElementById("video-wrapper");
-    const videoEl = document.getElementById("gym-video");
-    const overlayLine = document.getElementById("video-overlay-line");
+    const stageWrapper = document.getElementById("reels-stage-wrapper");
 
-    if (!videoSection || !videoWrapper) return;
+    if (!videoSection || !stageWrapper) return;
+    if (isReducedMotion) return;
 
-    // Check Data Saver or Reduced Motion: if set, skip playback
-    const isSaveData = navigator.connection && navigator.connection.saveData;
-    if (isSaveData || isReducedMotion) {
-      if (videoEl) videoEl.removeAttribute("autoplay");
-      return;
-    }
-
-    // IntersectionObserver to only play video when visible
-    if (videoEl) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            videoEl.play().catch(() => {});
-          } else {
-            videoEl.pause();
-          }
-        });
-      }, { threshold: 0.2 });
-      observer.observe(videoWrapper);
-    }
-
-    // ScrollTrigger Scrub: 72% width -> 100% full bleed, corners 24px -> 0px
-    ScrollTrigger.matchMedia({
-      // Desktop
-      "(min-width: 1025px)": function () {
-        gsap.fromTo(
-          videoWrapper,
-          { width: "72%", borderRadius: "24px" },
-          {
-            width: "100%",
-            borderRadius: "0px",
-            ease: "none",
-            scrollTrigger: {
-              trigger: videoSection,
-              start: "top 80%",
-              end: "bottom 30%",
-              scrub: 0.5
-            }
-          }
-        );
-
-        // Overlay text word reveal
-        if (overlayLine) {
-          const text = overlayLine.textContent;
-          const words = text.split(" ");
-          overlayLine.innerHTML = words.map(w => `<span class="vid-word" style="display:inline-block; opacity:0.1; transform:translateY(15px); transition:all 0.4s ease;">${w}</span>`).join(" ");
-          
-          ScrollTrigger.create({
-            trigger: videoSection,
-            start: "top 60%",
-            onEnter: () => {
-              gsap.to(".vid-word", { opacity: 1, y: 0, stagger: 0.1, duration: 0.6, ease: "power2.out" });
-            }
-          });
+    gsap.fromTo(
+      stageWrapper,
+      { opacity: 0.6, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: videoSection,
+          start: "top 75%"
         }
-      },
-      // Mobile / Tablet: Simple scale & fade in, no pinning
-      "(max-width: 1024px)": function () {
-        gsap.fromTo(
-          videoWrapper,
-          { width: "92%", opacity: 0.8 },
-          {
-            width: "100%",
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: videoSection,
-              start: "top 80%"
-            }
-          }
-        );
       }
-    });
+    );
   }
 
   // ----------------------------------------------------------------------------
