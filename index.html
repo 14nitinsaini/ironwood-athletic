@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0A0B">
+  
+  <title>Ironwood Athletic Club | Melbourne Gym & Performance Facility</title>
+  <meta name="description" content="Ironwood Athletic Club Melbourne. High-performance strength floor, athletic conditioning, coach-led classes, and contrast recovery suite under one roof.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ironwood Athletic Club | Melbourne Gym & Performance Facility">
+  <meta property="og:description" content="Where effort becomes routine. Strength, conditioning, squad classes, and recovery in Melbourne.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/hero-1-strength.jpg">
+  
+  <!-- Favicon (Inline SVG with Ember Orange Slash) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0A0B'/%3E%3Cpath d='M8 26L16 6' stroke='%23FF5A1F' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M16 26L24 6' stroke='%23F4F1EA' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Preload Hero Image 1 with High Priority -->
+  <link rel="preload" as="image" href="assets/images/hero-1-strength.jpg" fetchpriority="high">
+
+  <!-- Google Fonts: Barlow Condensed (600, 700, 800) & Inter (400, 500, 600) with swap display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JSON-LD HealthClub Schema (Clearly Sample Demonstration Data) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "Ironwood Athletic Club (Sample Demonstration)",
+    "description": "Premium strength, conditioning, and recovery club in Melbourne.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Sample Street",
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "postalCode": "3000",
+      "addressCountry": "AU"
+    },
+    "telephone": "+61400000000",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "05:00",
+        "closes": "22:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==============================================================================
+       1. Navigation Header
+       ============================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Ironwood Athletic Club Home">
+        <span class="brand-text">IRONWOOD</span>
+        <span class="brand-slash">//</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="desktop-nav-links">
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#trainers">Trainers</a></li>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#timetable">Timetable</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#enquiry">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="tel:+61400000000" class="nav-phone-btn" id="nav-phone-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span id="nav-phone-text">+61 400 000 000</span>
+        </a>
+        <a href="#enquiry" class="btn btn-primary btn-sm" id="nav-trial-btn">Book a Free Trial</a>
+        
+        <!-- Mobile Hamburger Button -->
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="Open Mobile Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Overlay Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-nav-links" id="mobile-nav-links">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#trainers">Trainers</a></li>
+      <li><a href="#plans">Membership Plans</a></li>
+      <li><a href="#timetable">Timetable</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#enquiry">Enquiry & Trial</a></li>
+      <li><a href="#location">Location & Hours</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <div class="mobile-contact-line">
+        <strong>Ironwood Athletic Club</strong><br>
+        123 Sample Street, Melbourne VIC 3000
+      </div>
+      <a href="#enquiry" class="btn btn-primary" id="mobile-menu-trial-btn">Book a Free Trial</a>
+    </div>
+  </div>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- ==============================================================================
+         2. Hero Section: 'The Three Worlds'
+         ============================================================================== -->
+    <section class="hero-section" id="hero" aria-label="Hero Introduction">
+      <!-- 3 Stacked Full-Bleed Photo Scenes -->
+      <div class="hero-scenes" id="hero-scenes-container">
+        <!-- Scene 1: Strength -->
+        <div class="hero-scene active" id="hero-scene-1" data-index="0" data-label="Strength & Power">
+          <img src="assets/images/hero-1-strength.jpg" alt="Athlete lifting barbell under dramatic moody gym lighting" class="hero-scene-img" id="hero-img-1">
+        </div>
+        <!-- Scene 2: Training -->
+        <div class="hero-scene" id="hero-scene-2" data-index="1" data-label="Athletic Conditioning">
+          <img src="assets/images/hero-2-training.jpg" alt="High energy battle ropes and athletic conditioning workout" class="hero-scene-img" id="hero-img-2" loading="lazy">
+        </div>
+        <!-- Scene 3: Recovery -->
+        <div class="hero-scene" id="hero-scene-3" data-index="2" data-label="Recovery & Longevity">
+          <img src="assets/images/hero-3-recovery.jpg" alt="Calm warm-lit recovery suite and post-workout mobility session" class="hero-scene-img" id="hero-img-3" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Contrast Gradients & Vignette -->
+      <div class="hero-overlay-gradient" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <!-- Letterbox Bars (Top & Bottom ~12svh) -->
+      <div class="hero-letterbox-top" id="letterbox-top" aria-hidden="true"></div>
+      <div class="hero-letterbox-bottom" id="letterbox-bottom" aria-hidden="true"></div>
+
+      <!-- Diagonal Orange Light Sweep & Initial Screen Wipe Line -->
+      <div class="hero-intro-line" id="hero-intro-line" aria-hidden="true"></div>
+      <div class="hero-light-sweep" id="hero-light-sweep" aria-hidden="true"></div>
+
+      <!-- Hero Content -->
+      <div class="container hero-content-wrapper">
+        <div class="hero-content">
+          <div class="eyebrow" id="hero-eyebrow">Melbourne, VIC</div>
+          <h1 class="hero-headline" id="hero-headline">
+            <span class="hero-word-mask"><span class="hero-word">STRONGER</span></span>
+            <span class="hero-word-mask"><span class="hero-word">STARTS</span></span>
+            <span class="hero-word-mask"><span class="hero-word">HERE</span></span>
+          </h1>
+          <p class="hero-subline" id="hero-subline">
+            Strength, conditioning, classes and recovery under one roof in Melbourne.
+          </p>
+
+          <div class="hero-ctas">
+            <div style="position: relative; display: inline-block;">
+              <a href="#enquiry" class="btn btn-primary" id="hero-primary-cta">
+                Book a Free Trial
+              </a>
+              <div class="pulse-ring" id="hero-pulse-ring" aria-hidden="true"></div>
+            </div>
+            <a href="https://wa.me/61400000000" class="btn btn-secondary" id="hero-secondary-cta" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.301-.15-1.777-.877-2.052-.977-.275-.101-.475-.15-.675.15-.2.301-.774.978-.95 1.178-.175.2-.35.226-.65.076-.3-.15-1.267-.467-2.414-1.49-1.147-1.023-1.638-2.288-1.838-2.589-.2-.3-.022-.462.128-.612.136-.135.301-.35.451-.525.15-.175.2-.3.301-.5.1-.2.05-.375-.025-.525s-.675-1.628-.925-2.23c-.244-.585-.492-.506-.675-.515-.175-.009-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.027-1.05 2.504 0 1.478 1.075 2.905 1.225 3.106.15.201 2.115 3.23 5.124 4.53 3.01 1.3 3.01.867 3.56.817.55-.05 1.777-.726 2.027-1.428.25-.702.25-1.303.175-1.428-.075-.125-.275-.2-.575-.35zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.176L2 22l4.982-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.635 0-3.15-.495-4.42-1.344l-.317-.212-3.284.861.877-3.201-.231-.34A8.167 8.167 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/></svg>
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
+
+          <!-- Scene Controls & Progress Strip -->
+          <div class="hero-controls">
+            <div class="hero-scene-info">
+              <span class="hero-counter" id="hero-counter">01 / 03</span>
+              <span class="hero-scene-label" id="hero-scene-label">Strength & Power</span>
+            </div>
+
+            <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Hero Scene Switcher">
+              <button class="hero-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Scene 1: Strength"></button>
+              <button class="hero-dot" data-index="1" role="tab" aria-selected="false" aria-label="Scene 2: Conditioning"></button>
+              <button class="hero-dot" data-index="2" role="tab" aria-selected="false" aria-label="Scene 3: Recovery"></button>
+            </div>
+
+            <div class="hero-scroll-cue" aria-hidden="true">
+              <span>Scroll</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         3. Video Band Section
+         ============================================================================== -->
+    <section class="video-section" id="video-band" aria-label="Club Cinematic Video">
+      <div class="container">
+        <div class="video-wrapper" id="video-wrapper">
+          <video 
+            id="gym-video" 
+            class="gym-video"
+            playsinline 
+            muted 
+            loop 
+            preload="none" 
+            poster="assets/images/video-poster.jpg"
+            aria-label="Athletes training at Ironwood Athletic Club"
+          >
+            <source src="assets/video/gym-reel.mp4" type="video/mp4">
+          </video>
+          <div class="video-overlay">
+            <h2 class="video-overlay-line" id="video-overlay-line">Where effort becomes routine.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         4. Intro Section ('The Club')
+         ============================================================================== -->
+    <section class="section intro-section" id="intro" aria-labelledby="intro-heading">
+      <div class="intro-bg-word" aria-hidden="true">IRONWOOD</div>
+      <div class="container">
+        <div class="intro-grid">
+          <!-- Left: Tall photo revealed through mask -->
+          <div class="intro-media-mask" id="intro-media-mask">
+            <img src="assets/images/intro-floor.jpg" alt="Interior view of Ironwood gym floor" loading="lazy">
+          </div>
+
+          <!-- Right: Eyebrow, Heading, Paragraphs, 4 SVG highlights -->
+          <div class="intro-content">
+            <div class="eyebrow" id="intro-eyebrow">The Club</div>
+            <h2 class="section-heading" id="intro-heading">One club. Every way to train.</h2>
+            <div class="intro-paragraphs" id="intro-paragraphs">
+              <p>Built for those who take their physical output seriously. Ironwood Athletic Club brings together heavy iron, calibrated conditioning rigs, structured group sessions and contrast therapy under a single roof.</p>
+              <p>No gimmicks, no crowded waits for platforms. Just deliberate architecture, world-standard equipment, and an atmosphere designed to push your personal threshold every day.</p>
+            </div>
+
+            <!-- 4 Inline SVG Icon Highlights -->
+            <div class="intro-highlights" id="intro-highlights">
+              <div class="intro-highlight-card">
+                <svg class="intro-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2" /><line x1="6" y1="12" x2="18" y2="12" /><line x1="6" y1="9" x2="6" y2="15" /><line x1="18" y1="9" x2="18" y2="15" /></svg>
+                <div class="intro-highlight-title">Strength</div>
+                <div class="intro-highlight-desc">Olympic platforms, calibrated plates, and precision racks.</div>
+              </div>
+              <div class="intro-highlight-card">
+                <svg class="intro-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <div class="intro-highlight-title">Cardio</div>
+                <div class="intro-highlight-desc">Assault runners, curved treadmills, and 25m sprint turf.</div>
+              </div>
+              <div class="intro-highlight-card">
+                <svg class="intro-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div class="intro-highlight-title">Classes</div>
+                <div class="intro-highlight-desc">Coach-led athletic conditioning and high-intensity squads.</div>
+              </div>
+              <div class="intro-highlight-card">
+                <svg class="intro-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <div class="intro-highlight-title">Recovery</div>
+                <div class="intro-highlight-desc">Full-spectrum infrared saunas and cold plunge immersion.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         5. Programs Section
+         ============================================================================== -->
+    <section class="section programs-section" id="programs" aria-labelledby="programs-heading">
+      <div class="container">
+        <div class="eyebrow">Disciplines</div>
+        <h2 class="section-heading" id="programs-heading">Specialised Programs</h2>
+        <div class="programs-grid" id="programs-grid">
+          <!-- Dynamically populated or rendered from config -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         6. Facilities Section (Bento Grid & Amenities)
+         ============================================================================== -->
+    <section class="section facilities-section" id="facilities" aria-labelledby="facilities-heading">
+      <div class="container">
+        <div class="eyebrow">Spaces</div>
+        <h2 class="section-heading" id="facilities-heading">Built For Output</h2>
+        
+        <!-- Bento Grid -->
+        <div class="bento-grid" id="bento-grid">
+          <!-- Dynamically rendered from config -->
+        </div>
+
+        <!-- Amenities Strip -->
+        <div class="amenities-strip" id="amenities-strip">
+          <!-- Dynamically rendered from config -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         7. Trainers Section
+         ============================================================================== -->
+    <section class="section trainers-section" id="trainers" aria-labelledby="trainers-heading">
+      <div class="container">
+        <div class="eyebrow">Coaches</div>
+        <h2 class="section-heading" id="trainers-heading">Coached By Masters</h2>
+        <div class="trainers-grid" id="trainers-grid">
+          <!-- Dynamically rendered from config -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         8. Membership Plans Section
+         ============================================================================== -->
+    <section class="section plans-section" id="plans" aria-labelledby="plans-heading">
+      <div class="container">
+        <div style="text-align: center;">
+          <div class="eyebrow" style="justify-content: center;">Memberships</div>
+          <h2 class="section-heading" id="plans-heading" style="margin-left: auto; margin-right: auto;">Clear, Flexible Commitment</h2>
+          
+          <!-- Weekly / Annual Toggle -->
+          <div class="plans-toggle-container">
+            <span class="toggle-label active" id="toggle-weekly-label">Billed Weekly</span>
+            <button class="plans-switch" id="plans-billing-toggle" aria-label="Toggle weekly or annual pricing" role="switch" aria-checked="false">
+              <div class="plans-switch-handle"></div>
+            </button>
+            <span class="toggle-label" id="toggle-annual-label">
+              Billed Annually
+              <span class="plans-save-badge">Save ~15%</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="plans-grid" id="plans-grid">
+          <!-- Dynamically rendered from config -->
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;" id="plans-sample-note">
+          <span class="sample-line">Sample pricing for demonstration purposes only.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         9. Timetable Section
+         ============================================================================== -->
+    <section class="section timetable-section" id="timetable" aria-labelledby="timetable-heading">
+      <div class="container">
+        <div class="eyebrow">Schedule</div>
+        <h2 class="section-heading" id="timetable-heading">Weekly Timetable</h2>
+
+        <div class="timetable-controls">
+          <!-- Day Tabs (Mon to Sun) -->
+          <div class="timetable-day-tabs" id="timetable-day-tabs" role="tablist" aria-label="Days of the Week">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Category Chips -->
+          <div class="timetable-chips" id="timetable-chips">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Schedule List Rows -->
+        <div class="timetable-list" id="timetable-list">
+          <!-- Dynamically rendered based on active day & category -->
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;" id="timetable-sample-note">
+          <span class="sample-line">Sample timetable schedule for demonstration.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         10. Gallery Section & Lightbox
+         ============================================================================== -->
+    <section class="section gallery-section" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="eyebrow">Inside Ironwood</div>
+        <h2 class="section-heading" id="gallery-heading">Visual Archive</h2>
+        
+        <div class="gallery-masonry" id="gallery-masonry">
+          <!-- 8 Masonry Tiles populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="lightbox-next" id="lightbox-next" aria-label="Next Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="" class="lightbox-img" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- ==============================================================================
+         11. Testimonials Section
+         ============================================================================== -->
+    <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div class="eyebrow" style="justify-content: center;">Community</div>
+          <h2 class="section-heading" id="testimonials-heading" style="margin: 0 auto;">Words From The Floor</h2>
+        </div>
+
+        <div class="testimonials-card" id="testimonials-card">
+          <svg class="testimonial-quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-8.983z"/></svg>
+          <div class="testimonial-text" id="testimonial-text">
+            "Ironwood strikes the rare balance between an uncompromising lifting space and an immaculate, welcoming club. The recovery suite alone transformed my training week."
+          </div>
+          <div class="testimonial-author">
+            <div>
+              <div class="author-name" id="author-name">Liam K.</div>
+              <div class="author-role" id="author-role">Member since 2024 <span class="sample-badge">Sample Review</span></div>
+            </div>
+            <div class="testimonial-nav">
+              <button class="test-btn" id="test-prev" aria-label="Previous Testimonial">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="test-btn" id="test-next" aria-label="Next Testimonial">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         12. FAQ Section: Accessible Accordion
+         ============================================================================== -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <div class="eyebrow" style="justify-content: center;">Questions</div>
+          <h2 class="section-heading" id="faq-heading" style="margin: 0 auto;">Frequently Asked</h2>
+        </div>
+
+        <div class="faq-list" id="faq-list">
+          <!-- Accordion Items dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         13. Enquiry Area ('Start with a Free Trial')
+         ============================================================================== -->
+    <section class="section enquiry-section" id="enquiry" aria-labelledby="enquiry-heading">
+      <div class="container">
+        <div style="margin-bottom: 3rem;">
+          <div class="eyebrow">Get Started</div>
+          <h2 class="section-heading" id="enquiry-heading">Experience The Ironwood Standard</h2>
+        </div>
+
+        <div class="enquiry-grid">
+          <!-- Left: 4 Contact Cards -->
+          <div class="enquiry-contact-cards" id="enquiry-contact-cards">
+            <!-- Call Card -->
+            <a href="tel:+61400000000" class="contact-card" id="contact-card-call">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Call Direct</div>
+                <div class="contact-card-detail" id="contact-phone-val">+61 400 000 000</div>
+              </div>
+            </a>
+
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/61400000000" class="contact-card" id="contact-card-whatsapp" target="_blank" rel="noopener">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.777-.877-2.052-.977-.275-.101-.475-.15-.675.15-.2.301-.774.978-.95 1.178-.175.2-.35.226-.65.076-.3-.15-1.267-.467-2.414-1.49-1.147-1.023-1.638-2.288-1.838-2.589-.2-.3-.022-.462.128-.612.136-.135.301-.35.451-.525.15-.175.2-.3.301-.5.1-.2.05-.375-.025-.525s-.675-1.628-.925-2.23c-.244-.585-.492-.506-.675-.515-.175-.009-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.027-1.05 2.504 0 1.478 1.075 2.905 1.225 3.106.15.201 2.115 3.23 5.124 4.53 3.01 1.3 3.01.867 3.56.817.55-.05 1.777-.726 2.027-1.428.25-.702.25-1.303.175-1.428-.075-.125-.275-.2-.575-.35zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.176L2 22l4.982-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.635 0-3.15-.495-4.42-1.344l-.317-.212-3.284.861.877-3.201-.231-.34A8.167 8.167 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Instant WhatsApp</div>
+                <div class="contact-card-detail">Chat with our club desk</div>
+              </div>
+            </a>
+
+            <!-- Email Card -->
+            <a href="mailto:hello@ironwoodathletic.com.au" class="contact-card" id="contact-card-email">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Email Us</div>
+                <div class="contact-card-detail" id="contact-email-val">hello@ironwoodathletic.com.au</div>
+              </div>
+            </a>
+
+            <!-- Visit Card -->
+            <a href="#location" class="contact-card" id="contact-card-visit">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Club Visit</div>
+                <div class="contact-card-detail" id="contact-address-val">123 Sample Street, Melbourne</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Right: Interactive Form Card with Two Tabs -->
+          <div class="enquiry-form-card">
+            <div class="form-tabs" role="tablist" aria-label="Enquiry Form Type">
+              <button class="form-tab-btn active" id="tab-trial-btn" role="tab" aria-selected="true" aria-controls="form-trial">Free Trial Pass</button>
+              <button class="form-tab-btn" id="tab-membership-btn" role="tab" aria-selected="false" aria-controls="form-membership">Membership Enquiry</button>
+            </div>
+
+            <!-- Form 1: Free Trial -->
+            <form id="form-trial" class="enquiry-form" novalidate>
+              <div class="form-row two-col">
+                <div class="form-group" id="group-trial-name">
+                  <label for="trial-name" class="form-label">Full Name *</label>
+                  <input type="text" id="trial-name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required aria-describedby="err-trial-name">
+                  <span class="form-error-msg" id="err-trial-name" role="alert">Please enter at least 2 characters.</span>
+                </div>
+                <div class="form-group" id="group-trial-phone">
+                  <label for="trial-phone" class="form-label">Phone Number *</label>
+                  <input type="tel" id="trial-phone" name="phone" class="form-input" placeholder="0400 000 000" required aria-describedby="err-trial-phone">
+                  <span class="form-error-msg" id="err-trial-phone" role="alert">Please enter a valid phone number (8–15 digits).</span>
+                </div>
+              </div>
+
+              <div class="form-group" id="group-trial-email">
+                <label for="trial-email" class="form-label">Email Address *</label>
+                <input type="email" id="trial-email" name="email" class="form-input" placeholder="alex@example.com" required aria-describedby="err-trial-email">
+                <span class="form-error-msg" id="err-trial-email" role="alert">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group" id="group-trial-interest">
+                <label for="trial-interest" class="form-label">Primary Interest *</label>
+                <select id="trial-interest" name="interest" class="form-select" required aria-describedby="err-trial-interest">
+                  <option value="">Select your training goal</option>
+                  <option value="strength-muscle">Strength & Muscle</option>
+                  <option value="cardio-conditioning">Cardio & Conditioning</option>
+                  <option value="group-classes">Group Classes</option>
+                  <option value="personal-training">Personal Training</option>
+                  <option value="recovery-wellness">Recovery & Wellness</option>
+                </select>
+                <span class="form-error-msg" id="err-trial-interest" role="alert">Please choose an area of interest.</span>
+              </div>
+
+              <div class="form-row two-col">
+                <div class="form-group" id="group-trial-day">
+                  <label for="trial-day" class="form-label">Preferred Day</label>
+                  <select id="trial-day" name="preferredDay" class="form-select">
+                    <option value="Any Day">Any Day This Week</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                  </select>
+                </div>
+                <div class="form-group" id="group-trial-time">
+                  <label for="trial-time" class="form-label">Preferred Time Window</label>
+                  <select id="trial-time" name="preferredTime" class="form-select">
+                    <option value="Morning">Morning (5:00am – 11:00am)</option>
+                    <option value="Midday">Midday (11:00am – 3:00pm)</option>
+                    <option value="Evening">Evening (3:00pm – 9:00pm)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-submit-wrap">
+                <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-trial">
+                  <span class="btn-text">Confirm Free Trial Pass</span>
+                  <div class="btn-spinner" aria-hidden="true"></div>
+                </button>
+              </div>
+
+              <div class="form-success-banner" id="trial-success-banner" role="status">
+                <svg class="success-check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div>
+                  <div class="success-title">Pass Reserved!</div>
+                  <div class="success-note">We've recorded your details and sent a confirmation SMS with access instructions.</div>
+                  <div class="demo-form-note" id="trial-demo-note">Demo form: connect an inbox to receive real enquiries.</div>
+                </div>
+              </div>
+            </form>
+
+            <!-- Form 2: Membership (Initially Hidden) -->
+            <form id="form-membership" class="enquiry-form" style="display: none;" novalidate>
+              <div class="form-row two-col">
+                <div class="form-group" id="group-member-name">
+                  <label for="member-name" class="form-label">Full Name *</label>
+                  <input type="text" id="member-name" name="name" class="form-input" placeholder="e.g. Jordan Smith" required aria-describedby="err-member-name">
+                  <span class="form-error-msg" id="err-member-name" role="alert">Please enter at least 2 characters.</span>
+                </div>
+                <div class="form-group" id="group-member-phone">
+                  <label for="member-phone" class="form-label">Phone Number *</label>
+                  <input type="tel" id="member-phone" name="phone" class="form-input" placeholder="0400 000 000" required aria-describedby="err-member-phone">
+                  <span class="form-error-msg" id="err-member-phone" role="alert">Please enter a valid phone number (8–15 digits).</span>
+                </div>
+              </div>
+
+              <div class="form-group" id="group-member-email">
+                <label for="member-email" class="form-label">Email Address *</label>
+                <input type="email" id="member-email" name="email" class="form-input" placeholder="jordan@example.com" required aria-describedby="err-member-email">
+                <span class="form-error-msg" id="err-member-email" role="alert">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group" id="group-member-plan">
+                <label for="member-plan" class="form-label">Selected Membership Plan *</label>
+                <select id="member-plan" name="plan" class="form-select" required aria-describedby="err-member-plan">
+                  <option value="">Select a membership tier</option>
+                  <option value="starter">Starter Plan ($29/wk)</option>
+                  <option value="performance">Performance Plan ($45/wk)</option>
+                  <option value="elite">Elite Plan ($65/wk)</option>
+                </select>
+                <span class="form-error-msg" id="err-member-plan" role="alert">Please choose a membership package.</span>
+              </div>
+
+              <div class="form-group" id="group-member-msg">
+                <label for="member-msg" class="form-label">Any specific questions or goals? (Optional)</label>
+                <textarea id="member-msg" name="message" class="form-textarea" rows="3" placeholder="Tell us about your background, training targets, or any past injuries..."></textarea>
+              </div>
+
+              <div class="form-submit-wrap">
+                <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-membership">
+                  <span class="btn-text">Submit Membership Enquiry</span>
+                  <div class="btn-spinner" aria-hidden="true"></div>
+                </button>
+              </div>
+
+              <div class="form-success-banner" id="member-success-banner" role="status">
+                <svg class="success-check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div>
+                  <div class="success-title">Enquiry Received!</div>
+                  <div class="success-note">Thank you. Our membership concierge will contact you shortly with your package options.</div>
+                  <div class="demo-form-note" id="member-demo-note">Demo form: connect an inbox to receive real enquiries.</div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         14. Location & Operating Hours Section
+         ============================================================================== -->
+    <section class="section location-section" id="location" aria-labelledby="location-heading">
+      <div class="container">
+        <div style="margin-bottom: 2.5rem;">
+          <div class="eyebrow">Location</div>
+          <h2 class="section-heading" id="location-heading">Find Ironwood Club</h2>
+        </div>
+
+        <div class="location-grid">
+          <!-- Stylised Dark Map Placeholder (Zero API Key Dependency) -->
+          <div class="map-placeholder" id="map-placeholder">
+            <!-- Dark Vector Map Lines SVG -->
+            <svg class="map-svg-bg" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M-50 100 H650 M-50 250 H650 M-50 180 H650" stroke="#26262A" stroke-width="6" />
+              <path d="M120 -50 V450 M320 -50 V450 M480 -50 V450" stroke="#26262A" stroke-width="6" />
+              <path d="M20 -20 L580 420 M-20 300 L450 -50" stroke="#1F1F23" stroke-width="4" stroke-dasharray="8 6" />
+              <circle cx="320" cy="180" r="140" stroke="#26262A" stroke-width="1.5" stroke-opacity="0.4"/>
+              <circle cx="320" cy="180" r="80" stroke="#26262A" stroke-width="1.5" stroke-opacity="0.4"/>
+            </svg>
+
+            <!-- Pulsing Orange Pin -->
+            <div class="map-pin-wrap">
+              <div class="map-pulse-circle"></div>
+              <svg class="map-pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+
+            <!-- Overlay Card with Directions -->
+            <div class="map-card-overlay">
+              <div>
+                <strong style="color: var(--text); font-size: 1rem; display: block;" id="map-brand-name">Ironwood Athletic Club</strong>
+                <span style="color: var(--text-muted); font-size: 0.88rem;" id="map-address-text">123 Sample Street, Melbourne VIC 3000</span>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=123+Sample+Street+Melbourne+VIC+3000" class="btn btn-secondary btn-sm" id="map-directions-link" target="_blank" rel="noopener">
+                Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Hours Table Card -->
+          <div class="location-info-card">
+            <div>
+              <h3 style="font-size: 1.8rem; margin-bottom: 8px;">Facility Hours</h3>
+              <p style="font-size: 0.92rem;">Members with Performance and Elite passes access 24/7 keyless entry.</p>
+            </div>
+
+            <table class="hours-table" aria-label="Club Operating Hours">
+              <tbody id="hours-table-body">
+                <!-- Dynamically populated and highlights today's schedule row -->
+              </tbody>
+            </table>
+
+            <div style="border-top: 1px solid var(--border); padding-top: 16px;">
+              <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.5;">
+                <strong style="color: var(--text);">Parking & Transit:</strong> Dedicated member basement parking on-site. Two minutes walk from central tram lines and rail stations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================================================
+       15. Footer Section
+       ============================================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <!-- Huge Brand Word Reveal -->
+      <div class="footer-brand-huge" id="footer-brand-huge" aria-hidden="true">IRONWOOD</div>
+
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-col">
+          <div class="nav-brand" style="margin-bottom: 14px;">
+            <span class="brand-text">IRONWOOD</span>
+            <span class="brand-slash">//</span>
+          </div>
+          <p style="font-size: 0.95rem; max-width: 32ch; margin-bottom: 20px;" id="footer-tagline">
+            Strength, conditioning, classes and recovery under one roof in Melbourne.
+          </p>
+          <div class="footer-social-strip" id="footer-social-strip">
+            <!-- Dynamically populated for non-empty social links -->
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#trainers">Coaching Staff</a></li>
+            <li><a href="#plans">Memberships</a></li>
+            <li><a href="#timetable">Timetable</a></li>
+            <li><a href="#faq">Club FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Details -->
+        <div class="footer-col">
+          <h4>Club Desk</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; color: var(--text-muted);">
+            <div id="footer-address">123 Sample Street, Melbourne VIC 3000</div>
+            <div id="footer-phone"><a href="tel:+61400000000" style="color: var(--text);">+61 400 000 000</a></div>
+            <div id="footer-email"><a href="mailto:hello@ironwoodathletic.com.au">hello@ironwoodathletic.com.au</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="footer-year">2026</span> <span id="footer-brand-name">Ironwood Athletic Club</span>. Sample content for demonstration.
+        </div>
+        <div>
+          Melbourne, Victoria, Australia
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================================================
+       16. Sticky Mobile Bar
+       ============================================================================== -->
+  <aside class="sticky-mobile-bar" id="sticky-mobile-bar" aria-label="Quick Actions">
+    <a href="tel:+61400000000" class="btn btn-secondary sticky-mobile-btn" id="sticky-call-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/61400000000" class="btn btn-secondary sticky-mobile-btn" id="sticky-wa-btn" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.301-.15-1.777-.877-2.052-.977-.275-.101-.475-.15-.675.15-.2.301-.774.978-.95 1.178-.175.2-.35.226-.65.076-.3-.15-1.267-.467-2.414-1.49-1.147-1.023-1.638-2.288-1.838-2.589-.2-.3-.022-.462.128-.612.136-.135.301-.35.451-.525.15-.175.2-.3.301-.5.1-.2.05-.375-.025-.525s-.675-1.628-.925-2.23c-.244-.585-.492-.506-.675-.515-.175-.009-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.027-1.05 2.504 0 1.478 1.075 2.905 1.225 3.106.15.201 2.115 3.23 5.124 4.53 3.01 1.3 3.01.867 3.56.817.55-.05 1.777-.726 2.027-1.428.25-.702.25-1.303.175-1.428-.075-.125-.275-.2-.575-.35zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.176L2 22l4.982-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.635 0-3.15-.495-4.42-1.344l-.317-.212-3.284.861.877-3.201-.231-.34A8.167 8.167 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.521 0 8.2 3.679 8.2 8.2 0 4.521-3.679 8.2-8.2 8.2z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#enquiry" class="btn btn-primary sticky-mobile-btn" id="sticky-trial-btn">
+      <span>Book Trial</span>
+    </a>
+  </aside>
+
+  <!-- ==============================================================================
+       Classic <script> tags: GSAP 3.12.5 + ScrollTrigger, Config, App, Motion
+       ============================================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>
